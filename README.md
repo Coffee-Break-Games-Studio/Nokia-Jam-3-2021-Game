@@ -17,7 +17,7 @@ If timer runs out scene prompts ‘Game Over’ Scene and may restart.
 
 Game is to hit marks and you win.
 
-# Gameplay Elements|
+## Gameplay Elements|
 
 ### Player Movement
 Static
@@ -53,7 +53,7 @@ Scene End (win level or lose)
 ### Extras
 ???
 
-# Level Design |
+## Level Design |
 
 One Scene or two scenes with 2 triggers ‘Game Start’ and ‘Game End’
 
@@ -64,7 +64,7 @@ Prompt
 Win
 Cont...
 
-# Gameplay Control|
+## Gameplay Control|
 
 ### Player Control
 W-A-S-D will control the scope movement
@@ -85,7 +85,7 @@ Wrong Hit triggers Game Over
 Flickers On/Off that prompts player to activate Googles
 
 
-# Possible Ideas:
+## Possible Ideas:
 
 Power Outage due to thunderstorm weather
 Player Characters gets lvl up items asin extend timer, bigger scope, EMP?
