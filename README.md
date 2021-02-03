@@ -20,35 +20,35 @@ Game is to hit marks and you win.
 ## Gameplay Elements|
 
 ### Player Movement
-Static
-Control Scope Movement 
-Press [x] to  hit mark
-Night Goggles button ()
+* Static
+* Control Scope Movement 
+* Press [x] to  hit mark
+* Night Goggles button ()
 
 ### Scene
-One Background with some foreground elements
-Building Scene where marks interact
-Hit Screen (?)
-Intro Scene
-Game Over Screen
-Win Screen
+* One Background with some foreground elements
+* Building Scene where marks interact
+* Hit Screen (?)
+* Intro Scene
+* Game Over Screen
+* Win Screen
 
 ### Mechanics
-Add scope movement WASD
-Add Timer Progress Bar 
-Hit Button ()
-Goggle Button ()
-Mark Movement AI or static at windows with sprite animation
+* Add scope movement WASD
+* Add Timer Progress Bar 
+* Hit Button ()
+* Goggle Button ()
+* Mark Movement AI or static at windows with sprite animation
 
 ### Graphic Style 
-Yes.
-Yes?
+* Yes.
+* Yes?
 
 ### Audio and Sound Effects
-Chiptune BGM
-Silencer bit Sound
-Effect Sounds
-Scene End (win level or lose)
+* Chiptune BGM
+* Silencer bit Sound
+* Effect Sounds
+* Scene End (win level or lose)
 
 ### Extras
 ???
@@ -60,33 +60,33 @@ One Scene or two scenes with 2 triggers ‘Game Start’ and ‘Game End’
 How many levels?
 
 ### Next Level
-Prompt
-Win
-Cont...
+* Prompt
+* Win
+* Cont...
 
 ## Gameplay Control|
 
 ### Player Control
-W-A-S-D will control the scope movement
-Mark Hit [x], [Enter], or Left Click
-Goggle On/Off
+* W-A-S-D will control the scope movement
+* Mark Hit [x], [Enter], or Left Click
+* Goggle On/Off
 
 ### Progress Bar
-Activates when level start
-It will decrease over time
-Blinks when approaching end
+* Activates when level start
+* It will decrease over time
+* Blinks when approaching end
 
 ### Marks (Enemies)
-Remain static in window?
-Correct hit triggers Win Scene
-Wrong Hit triggers Game Over
+* Remain static in window?
+* Correct hit triggers Win Scene
+* Wrong Hit triggers Game Over
 
 ### Scene
-Flickers On/Off that prompts player to activate Googles
+* Flickers On/Off that prompts player to activate Googles
 
 
 ## Possible Ideas:
 
-Power Outage due to thunderstorm weather
-Player Characters gets lvl up items asin extend timer, bigger scope, EMP?
+* Power Outage due to thunderstorm weather
+* Player Characters gets lvl up items asin extend timer, bigger scope, EMP?
 
