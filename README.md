@@ -1,5 +1,11 @@
 # Nokia Jam 3 Game Outline
 ### By Coffee Break Studios and friend
+## Links
+[Trello Board](https://trello.com/b/aFWUIBdZ/nokia-3310-jam-3)
+
+[Nokia 3310 Jam 3 Website](https://itch.io/jam/nokiajam3)
+
+[Unity v2020.2.2f1](https://unity.com/)
 
 ## Nokia Game Jam Theme On/Off
 
