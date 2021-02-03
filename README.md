@@ -1,4 +1,4 @@
-# Nokia Jam 3 Game
+# Nokia Jam 3 Game Outline
 ### By Coffee Break Studios and friend
 
 ## Nokia Game Jam Theme On/Off
