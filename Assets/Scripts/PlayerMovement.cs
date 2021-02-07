@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         Vector3 horizontal = transform.right * Input.GetAxisRaw("Horizontal");
         Vector3 vertical = transform.up * Input.GetAxisRaw("Vertical");
