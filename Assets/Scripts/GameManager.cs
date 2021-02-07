@@ -20,12 +20,12 @@ public class GameManager : MonoBehaviour
     public GameObject character08;
     public GameObject character09;
 
-    private CursorMovement cursor;
+    //private CursorMovement cursor;
 
-    private void Awake()
-    {
-        cursor = GameObject.FindObjectOfType<CursorMovement>();
-    }
+    //private void Awake()
+    //{
+    //    cursor = GameObject.FindObjectOfType<CursorMovement>();
+    //}
 
     // Start is called before the first frame update
     void Start()
@@ -101,12 +101,19 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cursor.wasHit())
-        {
-            Debug.Log("GameManager a hit was detected.");
-            Debug.Log("Tag = " + cursor.getOther().tag);
-            cursor.setHit(false);
-        }
+
+    }
+
+    public bool successfulHit(Collider2D ok)
+    {
+        return true;
+    }
+
+    // below function for the beginning of the game when the game chooses a bounty for us
+    string bounty()
+    {
+        // give us a random number
+        int random = Random.Range(1, 10); // 1 - 9
     }
 }
 

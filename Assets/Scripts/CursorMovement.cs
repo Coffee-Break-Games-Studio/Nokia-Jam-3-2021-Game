@@ -22,7 +22,8 @@ public class CursorMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Return))
             {
                 Debug.Log("key was pressed");
-                hit = true;
+                
+                // there will be a GameManager function down here
             }
         }
     }
