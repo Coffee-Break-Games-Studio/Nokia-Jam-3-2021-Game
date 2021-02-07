@@ -7,6 +7,11 @@ public class CursorMovement : MonoBehaviour
     private Collider2D other;
     private bool hit = false;
     private bool collided = false;
+    private GameManager gameManager;
+
+    void Awake() {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -22,8 +27,8 @@ public class CursorMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Return))
             {
                 Debug.Log("key was pressed");
+                gameManager.successfulHit(other);
                 
-                // there will be a GameManager function down here
             }
         }
     }

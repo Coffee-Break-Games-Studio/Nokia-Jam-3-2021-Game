@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     private List<int> list = new List<int>();
     private int hits = 0;
     private bool success = false;
+    private int counter = 0;
 
     public GameObject character01;
     public GameObject character02;
@@ -93,7 +94,7 @@ public class GameManager : MonoBehaviour
 
             }
 
-           
+
         }
 
     }
@@ -106,62 +107,58 @@ public class GameManager : MonoBehaviour
 
     public bool successfulHit(Collider2D ok)
     {
-        return true;
+        Debug.Log("GM successfulHit func: we choose " + ok.tag.ToString() + ", game chose: " + bounty());
+        bool status = false;
+
+        if (ok.tag.Equals(bounty())) {
+            status = true;
+        }
+
+        return status;
     }
 
     // below function for the beginning of the game when the game chooses a bounty for us
+    // but for now, it'll select someone when we are at the screen where the nine players reside
     string bounty()
     {
         // give us a random number
         int random = Random.Range(1, 10); // 1 - 9
+        string bountyTag;
+
+        switch (random)
+        {
+            case 1:
+                bountyTag = character01.tag.ToString();
+                break;
+            case 2:
+                bountyTag = character02.tag.ToString();
+                break;
+            case 3:
+                bountyTag = character03.tag.ToString();
+                break;
+            case 4:
+                bountyTag = character04.tag.ToString();
+                break;
+            case 5:
+                bountyTag = character05.tag.ToString();
+                break;
+            case 6:
+                bountyTag = character06.tag.ToString();
+                break;
+            case 7:
+                bountyTag = character07.tag.ToString();
+                break;
+            case 8:
+                bountyTag = character08.tag.ToString();
+                break;
+            case 9:
+                bountyTag = character09.tag.ToString();
+                break;
+            default:
+                bountyTag = "krispen wah";
+                break;
+        }
+
+        return bountyTag;
     }
 }
-
-
-
-//// give us a random number
-//int random = Random.Range(1, 10); // 1 - 9
-
-//// is above number not inside of list?
-//if (!list.Contains(random))
-//{
-//    // Load a Sprite (Assets/Resources/Sprites/sprite01.png)
-//    // var sprite = Resources.Load<Sprite>("Sprites/sprite01");
-
-//    switch (random)
-//    {
-//        case 1:
-//            Instantiate(capsule01, respawn.transform.position, respawn.transform.rotation);
-//            break;
-//        case 2:
-//            Instantiate(capsule02, respawn.transform.position, respawn.transform.rotation);
-//            break;
-//        case 3:
-//            Instantiate(capsule03, respawn.transform.position, respawn.transform.rotation);
-//            break;
-//        case 4:
-//            Instantiate(capsule04, respawn.transform.position, respawn.transform.rotation);
-//            break;
-//        case 5:
-//            Instantiate(capsule05, respawn.transform.position, respawn.transform.rotation);
-//            break;
-//        case 6:
-//            Instantiate(capsule06, respawn.transform.position, respawn.transform.rotation);
-//            break;
-//        case 7:
-//            Instantiate(capsule07, respawn.transform.position, respawn.transform.rotation);
-//            break;
-//        case 8:
-//            Instantiate(capsule08, respawn.transform.position, respawn.transform.rotation);
-//            break;
-//        case 9:
-//            Instantiate(capsule09, respawn.transform.position, respawn.transform.rotation);
-//            break;
-//        default:
-//            Debug.Log("krispen wah");
-//            break;
-//    }
-
-//    list.Add(random);
-//    success += 1;
-//}
