@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     private int hits = 0;
     private bool success = false;
     private int counter = 0;
+    private string bountyName = "";
 
     public GameObject character01;
     public GameObject character02;
@@ -91,12 +92,10 @@ public class GameManager : MonoBehaviour
                         success = true;
                     }
                 }
-
             }
-
-
         }
 
+        bountyName = bounty();
     }
 
     // Update is called once per frame
@@ -107,10 +106,10 @@ public class GameManager : MonoBehaviour
 
     public bool successfulHit(Collider2D ok)
     {
-        Debug.Log("GM successfulHit func: we choose " + ok.tag.ToString() + ", game chose: " + bounty());
+        Debug.Log("GM successfulHit func: we choose " + ok.tag.ToString() + ", game chose: " + bountyName);
         bool status = false;
 
-        if (ok.tag.Equals(bounty())) {
+        if (ok.tag.Equals(bountyName)) {
             status = true;
         }
 
