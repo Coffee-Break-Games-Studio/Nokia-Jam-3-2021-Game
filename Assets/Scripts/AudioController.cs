@@ -46,15 +46,20 @@ public class AudioController : MonoBehaviour
       audioSource.Play();
     }
 
+    public static GameObject instance = null;
     // singleton
-    //void Awake()
-    //{
-    //  GameObject[] objs = GameObject.FindGameObjectsWithTag("AudioController");
-    //  if (objs.Length > 1) {
-    //    Destroy(this.gameObject); // seppuku
-    //  }
-    //  DontDestroyOnLoad(this.gameObject);
-    //}
+    void Awake()
+    {
+     GameObject[] objs = GameObject.FindGameObjectsWithTag("AudioController");
+     // note: will seppuku all if there are >1 in first game scene!
+     if (objs.Length > 1 && instance != this.gameObject) {
+       Destroy(this.gameObject); // seppuku
+       return;
+     }
+
+     DontDestroyOnLoad(this.gameObject);
+     instance = this.gameObject;
+    }
 
     // Start is called before the first frame update
     void Start()

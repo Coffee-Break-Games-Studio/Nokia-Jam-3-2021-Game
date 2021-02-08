@@ -12,10 +12,12 @@ public class IntroSceneController : MonoBehaviour
     public GameObject BountyHolder;
     [Tooltip("List of possible sprites to choose as targets")]
     public Sprite[] BountySprites;
+    public AudioClip ButtonPressAudio;
     EventSystem eventSystem;
     Animator animator;
     bool canContinue = false;
     GameManager gameManager;
+    AudioController audioController;
 
     public void Awake()
     {
@@ -24,11 +26,13 @@ public class IntroSceneController : MonoBehaviour
     public void OnPlaySelected()
     {
         eventSystem.sendNavigationEvents = false;
+        audioController.Play(ButtonPressAudio);
         animator.SetTrigger("PlayGame");
     }
 
     public void OnQuitSelected()
     {
+        audioController.Play(ButtonPressAudio);
         Application.Quit();
     }
 
@@ -71,6 +75,7 @@ public class IntroSceneController : MonoBehaviour
     {
         animator = gameObject.GetComponent<Animator>();
         eventSystem = EventSystemObj.GetComponent<EventSystem>();
+        audioController = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         CreateRandomBounty();
     }
@@ -79,8 +84,9 @@ public class IntroSceneController : MonoBehaviour
     void Update()
     {
         if (Input.GetButton("Action") && canContinue) {
-            // TODO scene transition to game (Must be added to File -> Build Settings)
-            // SceneManager.LoadSceneAsync("JazyScene");
+            canContinue = false; // prevent multiple fires
+            Debug.Log("Transition");
+            audioController.Play(ButtonPressAudio);
             Loader.Load(Loader.Scene.GamePlayScene);
         }
     }
