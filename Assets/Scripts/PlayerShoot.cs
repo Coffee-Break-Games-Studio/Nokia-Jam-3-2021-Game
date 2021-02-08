@@ -12,6 +12,7 @@ public class PlayerShoot : MonoBehaviour
     void TryShot()
     {
       if (shootingDisabled) return;
+      // TODO play sound
 
       // will only hit 2DColliders in the specified layer mask
       Collider2D hit = Physics2D.OverlapPoint(transform.position, layerMaskInt);
