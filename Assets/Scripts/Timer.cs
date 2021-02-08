@@ -6,14 +6,13 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     // Start is called before the first frame update
-    Image timerBar;
+    public GameObject timerBar;
     public float maxTime = 5f;
     float timeLeft;
 
 
     void Start()
     {
-        timerBar = GetComponent<Image>();
         timeLeft = maxTime;
     }
 
@@ -23,7 +22,7 @@ public class Timer : MonoBehaviour
         if (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
-            timerBar.fillAmount = timeLeft / maxTime;
+            timerBar.transform.localScale = new Vector3(1, timeLeft / maxTime, 1);
         }
         else
         {
