@@ -102,9 +102,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void successfulHit(Collider2D ok)
+    public void successfulHit(string tag)
     {
-        string trimTagString = ok.tag.Remove(0, 4);
+        string trimTagString = tag.Remove(0, 4);
         int tagStringInt = int.Parse(trimTagString);
 
         if (bountyNum == tagStringInt)
