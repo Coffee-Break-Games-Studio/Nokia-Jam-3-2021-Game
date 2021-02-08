@@ -332,7 +332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b95ba8c70e6254748bf13296c8745e7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ToggleCooldownSeconds: 2
+  ToggleCooldownSeconds: 1
   inverter: {fileID: 8202472695582720312}
   WindowCovers: {fileID: 0}
 --- !u!114 &1652219755
