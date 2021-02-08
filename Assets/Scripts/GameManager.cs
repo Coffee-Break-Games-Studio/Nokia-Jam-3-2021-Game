@@ -151,6 +151,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Was not");
             audioController.Play(UnsuccessfulHitAudio);
+            PlayerData.BountySuccess = 0; // nuke their score
             Loader.Load(Loader.Scene.GameOverScene);
         }
 
