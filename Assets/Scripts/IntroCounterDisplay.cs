@@ -9,11 +9,12 @@ public class IntroCounterDisplay : MonoBehaviour
     [Tooltip("GameObject which will be parent to all points and start position")]
     public GameObject InitialPositionObject;
     int score;
+    GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
-        // TODO get score from game manager
-        score = 5; // TODO replace with value from game manager
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        score = gameManager.getPlayerScore(); 
 
         if (score > 5) score = 5; // limit of 5 (visual limitation)
         for (int i = 0; i < score; i++) {

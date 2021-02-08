@@ -15,6 +15,7 @@ public class IntroSceneController : MonoBehaviour
     EventSystem eventSystem;
     Animator animator;
     bool canContinue = false;
+    GameManager gameManager;
 
     public void OnPlaySelected()
     {
@@ -24,7 +25,7 @@ public class IntroSceneController : MonoBehaviour
 
     public void OnQuitSelected()
     {
-        Debug.Log("Quit selected");
+        Application.Quit();
     }
 
     public void OnAnimCameraDownEvent()
@@ -57,7 +58,8 @@ public class IntroSceneController : MonoBehaviour
       bounty.transform.Find("Bounty").GetComponent<SpriteRenderer>().sprite = bountySprite;
 
       Debug.Log("Bounty selected: " + i);
-      // TODO let game manager know the selected bounty
+      gameManager.bountySelect(i);
+
     }
 
     // Start is called before the first frame update
@@ -65,6 +67,7 @@ public class IntroSceneController : MonoBehaviour
     {
         animator = gameObject.GetComponent<Animator>();
         eventSystem = EventSystemObj.GetComponent<EventSystem>();
+        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         CreateRandomBounty();
     }
 
@@ -73,6 +76,7 @@ public class IntroSceneController : MonoBehaviour
     {
         if (Input.GetButton("Action") && canContinue) {
           // TODO scene transition to game (Must be added to File -> Build Settings)
+          Debug.Log("Transition");
           // SceneManager.LoadSceneAsync("JazyScene");
         }
     }
