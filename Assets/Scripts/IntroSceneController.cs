@@ -43,7 +43,7 @@ public class IntroSceneController : MonoBehaviour
 
     void CreateRandomBounty()
     {
-      int i = Random.Range(1, BountySprites.Length - 1);
+      int i = Random.Range(1, BountySprites.Length); // maxExclusive
       GameObject bountyPrefabTemplate = Resources.Load<GameObject>("BountyPrefabTemplate");
 
       // create the bounty board
