@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
 
                 if (PlayerData.BountySuccess == 5)
                 {
+                    PlayerData.BountySuccess = 0; // nuke their score
                     Loader.Load(Loader.Scene.VictolyScene);
                 } else
                 {
