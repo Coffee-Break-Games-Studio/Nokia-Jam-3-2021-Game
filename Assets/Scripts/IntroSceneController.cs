@@ -67,7 +67,7 @@ public class IntroSceneController : MonoBehaviour
     {
         animator = gameObject.GetComponent<Animator>();
         eventSystem = EventSystemObj.GetComponent<EventSystem>();
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         CreateRandomBounty();
     }
 

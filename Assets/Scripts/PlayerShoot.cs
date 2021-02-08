@@ -25,7 +25,7 @@ public class PlayerShoot : MonoBehaviour
       if (hit != null) {
         shootingDisabled = true; // prevent spamming the game manager
         Debug.Log("Hit: " + hit.gameObject.name);
-        // TODO call game manager
+
         gameManager.successfulHit(hit.gameObject.tag);
       } else {
         // miss

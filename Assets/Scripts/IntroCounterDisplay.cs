@@ -13,7 +13,7 @@ public class IntroCounterDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         score = gameManager.getPlayerScore(); 
 
         if (score > 5) score = 5; // limit of 5 (visual limitation)
