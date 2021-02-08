@@ -334,6 +334,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ToggleCooldownSeconds: 2
   inverter: {fileID: 8202472695582720312}
+  WindowCovers: {fileID: 0}
 --- !u!114 &1652219755
 MonoBehaviour:
   m_ObjectHideFlags: 0
