@@ -18,7 +18,7 @@ public class BackgroundWindowCovers : MonoBehaviour
     {
         // randomly open or close them
         for (int i = 0; i < covers.Length; i++) {
-          covers[i].SetActive(Random.Range(0,1) == 1);
+          covers[i].SetActive(Random.Range(0,2) == 1);
         }
     }
 
