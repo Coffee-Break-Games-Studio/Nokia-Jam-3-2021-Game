@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class IntroSceneController : MonoBehaviour
 {
     public GameObject XButton;
     public GameObject EventSystemObj; 
+    [Tooltip("GameObject which will be the parent of the bounty board")]
+    public GameObject BountyHolder;
+    [Tooltip("List of possible sprites to choose as targets")]
+    public Sprite[] BountySprites;
     EventSystem eventSystem;
     Animator animator;
+    bool canContinue = false;
 
     public void OnPlaySelected()
     {
@@ -27,8 +33,31 @@ public class IntroSceneController : MonoBehaviour
     }
     public void OnAnimBountyAppearEvent()
     {
+      canContinue = true;
       // Debug.Log("Bounty appeared");
+    }
+    public void OnAnimBountyAppearAndWaitEvent()
+    {
       XButton.SetActive(true);
+    }
+
+    void CreateRandomBounty()
+    {
+      int i = Random.Range(1, BountySprites.Length - 1);
+      GameObject bountyPrefabTemplate = Resources.Load<GameObject>("BountyPrefabTemplate");
+
+      // create the bounty board
+      GameObject bounty = Instantiate(bountyPrefabTemplate, BountyHolder.transform);
+
+      // for javy... automatic loading
+      // Sprite bountySprite = Resources.Load<Sprite>("Bounties/Bounty0" + i); // will break at i > 9!
+      Sprite bountySprite = BountySprites[i - 1];
+
+      // ma-ma mia, das a big null exception error
+      bounty.transform.Find("Bounty").GetComponent<SpriteRenderer>().sprite = bountySprite;
+
+      Debug.Log("Bounty selected: " + i);
+      // TODO let game manager know the selected bounty
     }
 
     // Start is called before the first frame update
@@ -36,11 +65,15 @@ public class IntroSceneController : MonoBehaviour
     {
         animator = gameObject.GetComponent<Animator>();
         eventSystem = EventSystemObj.GetComponent<EventSystem>();
+        CreateRandomBounty();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetButton("Action") && canContinue) {
+          // TODO scene transition to game (Must be added to File -> Build Settings)
+          // SceneManager.LoadSceneAsync("JazyScene");
+        }
     }
 }
