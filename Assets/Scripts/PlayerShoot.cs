@@ -13,6 +13,7 @@ public class PlayerShoot : MonoBehaviour
     bool shootingDisabled = false;
     float lastShotTime = 0;
     AudioController ac;
+    GameManager gameManager;
 
     void TryShot()
     {
@@ -24,7 +25,8 @@ public class PlayerShoot : MonoBehaviour
       if (hit != null) {
         shootingDisabled = true; // prevent spamming the game manager
         Debug.Log("Hit: " + hit.gameObject.name);
-        // TODO call game manager
+
+        gameManager.successfulHit(hit.gameObject.tag);
       } else {
         // miss
         // TODO play sound
@@ -38,6 +40,7 @@ public class PlayerShoot : MonoBehaviour
         col = gameObject.GetComponent<Collider2D>();
         layerMaskInt = LayerMask.NameToLayer(LayerMaskForShot);
         ac = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
     }
 
     void Update()
