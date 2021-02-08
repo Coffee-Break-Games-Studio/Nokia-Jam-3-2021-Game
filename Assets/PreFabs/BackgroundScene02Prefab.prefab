@@ -462,7 +462,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2305415e5c6a2cd41aa1273af157b2c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  covers: []
+  covers:
+  - {fileID: 1665695009}
+  - {fileID: 422980257}
+  - {fileID: 1931398776}
+  - {fileID: 235486289}
+  - {fileID: 1831293611}
+  - {fileID: 549823122}
+  - {fileID: 1117138050}
+  - {fileID: 489072379}
+  - {fileID: 1547437511}
 --- !u!1 &1547437511
 GameObject:
   m_ObjectHideFlags: 0
