@@ -47,14 +47,14 @@ public class AudioController : MonoBehaviour
     }
 
     // singleton
-    void Awake()
-    {
-      GameObject[] objs = GameObject.FindGameObjectsWithTag("AudioController");
-      if (objs.Length > 1) {
-        Destroy(this.gameObject); // seppuku
-      }
-      DontDestroyOnLoad(this.gameObject);
-    }
+    //void Awake()
+    //{
+    //  GameObject[] objs = GameObject.FindGameObjectsWithTag("AudioController");
+    //  if (objs.Length > 1) {
+    //    Destroy(this.gameObject); // seppuku
+    //  }
+    //  DontDestroyOnLoad(this.gameObject);
+    //}
 
     // Start is called before the first frame update
     void Start()

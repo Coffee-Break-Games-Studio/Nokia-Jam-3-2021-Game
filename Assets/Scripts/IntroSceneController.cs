@@ -17,6 +17,10 @@ public class IntroSceneController : MonoBehaviour
     bool canContinue = false;
     GameManager gameManager;
 
+    public void Awake()
+    {
+        gameManager = GameObject.FindObjectOfType<GameManager>();
+    }
     public void OnPlaySelected()
     {
         eventSystem.sendNavigationEvents = false;
@@ -58,7 +62,7 @@ public class IntroSceneController : MonoBehaviour
       bounty.transform.Find("Bounty").GetComponent<SpriteRenderer>().sprite = bountySprite;
 
       Debug.Log("Bounty selected: " + i);
-      gameManager.bountySelect(i);
+      gameManager.BountySelect(i);
 
     }
 
@@ -75,8 +79,9 @@ public class IntroSceneController : MonoBehaviour
     void Update()
     {
         if (Input.GetButton("Action") && canContinue) {
-          // TODO scene transition to game (Must be added to File -> Build Settings)
-          // SceneManager.LoadSceneAsync("JazyScene");
+            // TODO scene transition to game (Must be added to File -> Build Settings)
+            // SceneManager.LoadSceneAsync("JazyScene");
+            Loader.Load(Loader.Scene.GamePlayScene);
         }
     }
 }

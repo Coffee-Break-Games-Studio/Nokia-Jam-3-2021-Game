@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     private List<int> list = new List<int>();
     private int hits = 0;
     private bool success = false;
-    private int bountyNum = 0;
 
     public GameObject character01;
     public GameObject character02;
@@ -21,6 +20,9 @@ public class GameManager : MonoBehaviour
     public GameObject character08;
     public GameObject character09;
 
+    public float maxTime = 5f;
+    float timeLeft;
+
     //private CursorMovement cursor;
 
     //private void Awake()
@@ -31,75 +33,100 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        if (respawns.Length == 0)
-            respawns = GameObject.FindGameObjectsWithTag("Respawn");
-
-        foreach (GameObject respawn in respawns)
+        if (Loader.currentScene().Equals("GamePlayScene"))
         {
-            success = false;
+            Debug.Log("bounty num = " + PlayerData.CorrectBountyTargetNumber);
 
-            if (hits <= 9)
+            if (respawns.Length == 0)
+                respawns = GameObject.FindGameObjectsWithTag("Respawn");
+
+            foreach (GameObject respawn in respawns)
             {
-                while (!success)
+                success = false;
+
+                if (hits <= 9)
                 {
-                    // give us a random number
-                    int random = Random.Range(1, 10); // 1 - 9
-
-                    // is above number not inside of list?
-                    if (!list.Contains(random))
+                    while (!success)
                     {
-                        // Load a Sprite (Assets/Resources/Sprites/sprite01.png)
-                        // var sprite = Resources.Load<Sprite>("Sprites/sprite01");
+                        // give us a random number
+                        int random = Random.Range(1, 10); // 1 - 9
 
-                        switch (random)
+                        // is above number not inside of list?
+                        if (!list.Contains(random))
                         {
-                            case 1:
-                                Instantiate(character01, respawn.transform.position, respawn.transform.rotation);
-                                break;
-                            case 2:
-                                Instantiate(character02, respawn.transform.position, respawn.transform.rotation);
-                                break;
-                            case 3:
-                                Instantiate(character03, respawn.transform.position, respawn.transform.rotation);
-                                break;
-                            case 4:
-                                Instantiate(character04, respawn.transform.position, respawn.transform.rotation);
-                                break;
-                            case 5:
-                                Instantiate(character05, respawn.transform.position, respawn.transform.rotation);
-                                break;
-                            case 6:
-                                Instantiate(character06, respawn.transform.position, respawn.transform.rotation);
-                                break;
-                            case 7:
-                                Instantiate(character07, respawn.transform.position, respawn.transform.rotation);
-                                break;
-                            case 8:
-                                Instantiate(character08, respawn.transform.position, respawn.transform.rotation);
-                                break;
-                            case 9:
-                                Instantiate(character09, respawn.transform.position, respawn.transform.rotation);
-                                break;
-                            default:
-                                Debug.Log("krispen wah");
-                                break;
-                        }
+                            // Load a Sprite (Assets/Resources/Sprites/sprite01.png)
+                            // var sprite = Resources.Load<Sprite>("Sprites/sprite01");
 
-                        list.Add(random);
-                        hits += 1;
-                        success = true;
+                            switch (random)
+                            {
+                                case 1:
+                                    Instantiate(character01, respawn.transform.position, respawn.transform.rotation);
+                                    break;
+                                case 2:
+                                    Instantiate(character02, respawn.transform.position, respawn.transform.rotation);
+                                    break;
+                                case 3:
+                                    Instantiate(character03, respawn.transform.position, respawn.transform.rotation);
+                                    break;
+                                case 4:
+                                    Instantiate(character04, respawn.transform.position, respawn.transform.rotation);
+                                    break;
+                                case 5:
+                                    Instantiate(character05, respawn.transform.position, respawn.transform.rotation);
+                                    break;
+                                case 6:
+                                    Instantiate(character06, respawn.transform.position, respawn.transform.rotation);
+                                    break;
+                                case 7:
+                                    Instantiate(character07, respawn.transform.position, respawn.transform.rotation);
+                                    break;
+                                case 8:
+                                    Instantiate(character08, respawn.transform.position, respawn.transform.rotation);
+                                    break;
+                                case 9:
+                                    Instantiate(character09, respawn.transform.position, respawn.transform.rotation);
+                                    break;
+                                default:
+                                    Debug.Log("krispen wah");
+                                    break;
+                            }
+
+                            list.Add(random);
+                            hits += 1;
+                            success = true;
+                        }
                     }
                 }
             }
+        } else if (Loader.currentScene().Equals("GameOverScene") || Loader.currentScene().Equals("ContinueScene"))
+        {
+            timeLeft = maxTime;
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Loader.currentScene().Equals("GameOverScene") || Loader.currentScene().Equals("ContinueScene"))
+        {
+            if (timeLeft > 0)
+            {
+                timeLeft -= Time.deltaTime;
+            } else
+            {
 
+                if (PlayerData.BountySuccess == 5)
+                {
+                    Loader.Load(Loader.Scene.VictolyScene);
+                } else
+                {
+                    Loader.Load(Loader.Scene.IntroScene);
+                }
+                
+
+
+            }
+        }
     }
 
     public void successfulHit(string tag)
@@ -107,23 +134,30 @@ public class GameManager : MonoBehaviour
         string trimTagString = tag.Remove(0, 4);
         int tagStringInt = int.Parse(trimTagString);
 
-        if (bountyNum == tagStringInt)
+        Debug.Log("the tag from the hit = " + tag.ToString() + "and its int = " + tagStringInt);
+        Debug.Log("the bounty num = " + PlayerData.CorrectBountyTargetNumber);
+
+        if (PlayerData.CorrectBountyTargetNumber == tagStringInt)
         {
             Debug.Log("Was successful");
-        } else
+            PlayerData.BountySuccess += 1;
+            Loader.Load(Loader.Scene.ContinueScene);
+        } else // WE GETTING A GAME OVER YOU FUCKING JOBBER
         {
             Debug.Log("Was not");
+            Loader.Load(Loader.Scene.GameOverScene);
         }
 
     }
 
-    public void bountySelect(int b)
+    public void BountySelect(int b)
     {
-        bountyNum = b;
+        //bountyNum = b;
+        PlayerData.CorrectBountyTargetNumber = b;
     }
 
-    public int getPlayerScore()
+    public int GetPlayerScore()
     {
-        return PlayerScore.BountySuccess;
+        return PlayerData.BountySuccess;
     }
 }

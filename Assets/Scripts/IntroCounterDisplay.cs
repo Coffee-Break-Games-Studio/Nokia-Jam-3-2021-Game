@@ -14,7 +14,7 @@ public class IntroCounterDisplay : MonoBehaviour
     void Start()
     {
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        score = gameManager.getPlayerScore(); 
+        score = gameManager.GetPlayerScore(); 
 
         if (score > 5) score = 5; // limit of 5 (visual limitation)
         for (int i = 0; i < score; i++) {

@@ -130,6 +130,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5901864507656843697, guid: f0e22f45147edd745950c33a52574153, type: 3}
+      propertyPath: m_Offset.y
+      value: -104
+      objectReference: {fileID: 0}
     - target: {fileID: 7158662017683915940, guid: f0e22f45147edd745950c33a52574153, type: 3}
       propertyPath: m_Name
       value: BackgroundScene02Prefab
