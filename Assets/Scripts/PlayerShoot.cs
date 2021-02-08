@@ -41,6 +41,7 @@ public class PlayerShoot : MonoBehaviour
         layerMaskInt = LayerMask.NameToLayer(LayerMaskForShot);
         ac = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        lastShotTime = Time.time;
     }
 
     void Update()
