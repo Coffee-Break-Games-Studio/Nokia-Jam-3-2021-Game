@@ -6,6 +6,8 @@ public class PlayerNightVision : MonoBehaviour
 {
     public float ToggleCooldownSeconds = 2.0f; // cooldown in seconds
     public GameObject inverter;
+    [Tooltip("GameObject with window covers (Most likely in the background prefab)")]
+    public BackgroundWindowCovers WindowCovers;
 
     bool onCoolDown = false;
     float lastUseTime = 0;
@@ -13,6 +15,7 @@ public class PlayerNightVision : MonoBehaviour
     void toggleNightVision()
     {
         inverter.SetActive(!inverter.activeSelf);
+        WindowCovers.ToggleCovers();
     }
     // Start is called before the first frame update
     void Start()
