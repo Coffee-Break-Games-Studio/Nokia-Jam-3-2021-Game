@@ -18,10 +18,14 @@ public class IntroSceneController : MonoBehaviour
     bool canContinue = false;
     GameManager gameManager;
     AudioController audioController;
+    private static bool IntroSceneVisisted = false;
 
     public void Awake()
     {
-        gameManager = GameObject.FindObjectOfType<GameManager>();
+        animator = gameObject.GetComponent<Animator>();
+        eventSystem = EventSystemObj.GetComponent<EventSystem>();
+        IntroSceneSetState();
+        IntroSceneVisisted = true;
     }
     public void OnPlaySelected()
     {
@@ -70,11 +74,18 @@ public class IntroSceneController : MonoBehaviour
 
     }
 
+    void IntroSceneSetState()
+    {
+      if (!IntroSceneVisisted) return;
+      // intro scene has been visited, fast forward to bottom of scene
+      eventSystem.sendNavigationEvents = false;
+      transform.position = new Vector3(0, -84, 0); // hardcoded from animation end state
+      animator.SetTrigger("FastForwardBottom");
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        animator = gameObject.GetComponent<Animator>();
-        eventSystem = EventSystemObj.GetComponent<EventSystem>();
         audioController = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
         gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
         CreateRandomBounty();
