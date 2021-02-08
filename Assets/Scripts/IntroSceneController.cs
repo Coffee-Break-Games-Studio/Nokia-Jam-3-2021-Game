@@ -76,7 +76,6 @@ public class IntroSceneController : MonoBehaviour
     {
         if (Input.GetButton("Action") && canContinue) {
           // TODO scene transition to game (Must be added to File -> Build Settings)
-          Debug.Log("Transition");
           // SceneManager.LoadSceneAsync("JazyScene");
         }
     }
