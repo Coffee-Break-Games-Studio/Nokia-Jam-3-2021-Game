@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     }
 
     public bool successfulHit(Collider2D ok)
-    {
+    { 
         Debug.Log("GM successfulHit func: we choose " + ok.tag.ToString() + ", game chose: " + bountyName);
         bool status = false;
 
