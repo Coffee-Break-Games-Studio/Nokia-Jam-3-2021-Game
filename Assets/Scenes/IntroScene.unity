@@ -1347,6 +1347,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2eb19186eb7f41f48a73517b23ba1ffb, type: 3}
   - {fileID: 21300000, guid: b34e59e43eed497499a657b83a202b40, type: 3}
   - {fileID: 21300000, guid: d2ff381d6a1460e40bd4e69583e8cbae, type: 3}
+  ButtonPressAudio: {fileID: 8300000, guid: 87e8a46e26c92134db26b7b7fc0c5515, type: 3}
 --- !u!4 &2107312784
 Transform:
   m_ObjectHideFlags: 0
@@ -1382,6 +1383,63 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &5011812407828188075
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630536, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 154902403373630539, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
+      propertyPath: m_Name
+      value: AudioController
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86afe25fc6977a141aeaedbc467c3f51, type: 3}
 --- !u!1001 &8237615470463907449
 PrefabInstance:
   m_ObjectHideFlags: 0
