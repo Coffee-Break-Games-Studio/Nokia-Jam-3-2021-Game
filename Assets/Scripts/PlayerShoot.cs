@@ -6,10 +6,13 @@ public class PlayerShoot : MonoBehaviour
 {
     public string LayerMaskForShot;
     public float ShootCooldown = 0.5f;
+    public AudioClip MissShotClip;
+
     Collider2D col;
     int layerMaskInt;
     bool shootingDisabled = false;
     float lastShotTime = 0;
+    AudioController ac;
 
     void TryShot()
     {
@@ -26,6 +29,7 @@ public class PlayerShoot : MonoBehaviour
         // miss
         // TODO play sound
         // Debug.Log("Miss");
+        ac.Play(MissShotClip);
       }
     }
     // Start is called before the first frame update
@@ -33,6 +37,7 @@ public class PlayerShoot : MonoBehaviour
     {
         col = gameObject.GetComponent<Collider2D>();
         layerMaskInt = LayerMask.NameToLayer(LayerMaskForShot);
+        ac = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
     }
 
     void Update()
