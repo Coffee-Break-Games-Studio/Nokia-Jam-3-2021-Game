@@ -38,11 +38,12 @@ public class AudioController : MonoBehaviour
       audioSource.clip = clip;
       audioSource.Play();
       yield return new WaitWhile(() => audioSource.isPlaying);
-      audioSource.clip = interruptedClip;
-      audioSource.Play();
-
       interruptedClip = null;
       playingRoutine = null;
+
+      audioSource.clip = interruptedClip;
+      audioSource.time = interruptedClipTime;
+      audioSource.Play();
     }
 
     // singleton
