@@ -1393,10 +1393,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SafeCamera
       objectReference: {fileID: 0}
-    - target: {fileID: 8237615470706347527, guid: 883902a1b4837b641a5e9f02b5ba8d8b, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8237615470706347769, guid: 883902a1b4837b641a5e9f02b5ba8d8b, type: 3}
       propertyPath: m_RootOrder
       value: 0
