@@ -335,6 +335,8 @@ MonoBehaviour:
   ToggleCooldownSeconds: 1
   inverter: {fileID: 8202472695582720312}
   WindowCovers: {fileID: 0}
+  ToggleOnAudio: {fileID: 8300000, guid: a2438cd0780094b49a86a6c3594ea77f, type: 3}
+  ToggleOffAudio: {fileID: 8300000, guid: 8215cc3c06b772244b75ec2b51c7bdbd, type: 3}
 --- !u!114 &1652219755
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -8,6 +8,9 @@ public class PlayerNightVision : MonoBehaviour
     public GameObject inverter;
     [Tooltip("GameObject with window covers (Most likely in the background prefab)")]
     public BackgroundWindowCovers WindowCovers;
+    public AudioClip ToggleOnAudio;
+    public AudioClip ToggleOffAudio;
+    AudioController audioController;
 
     bool onCoolDown = false;
     float lastUseTime = 0;
@@ -16,11 +19,14 @@ public class PlayerNightVision : MonoBehaviour
     {
         inverter.SetActive(!inverter.activeSelf);
         WindowCovers.ToggleCovers();
+
+        if (inverter.activeSelf) audioController.Play(ToggleOnAudio);
+        else audioController.Play(ToggleOffAudio);
     }
     // Start is called before the first frame update
     void Start()
     {
-
+        audioController = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
     }
 
     // Update is called once per frame
