@@ -54,3 +54,5 @@ MonoBehaviour:
   character08: {fileID: 0}
   character09: {fileID: 0}
   maxTime: 5
+  SuccessfulHitAudio: {fileID: 8300000, guid: b3954f48e67fed64db43213fd30d2a7b, type: 3}
+  UnsuccessfulHitAudio: {fileID: 8300000, guid: e407034dc359c4942b3310c29617656b, type: 3}

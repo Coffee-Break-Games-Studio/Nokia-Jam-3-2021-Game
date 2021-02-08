@@ -21,7 +21,10 @@ public class GameManager : MonoBehaviour
     public GameObject character09;
 
     public float maxTime = 5f;
+    public AudioClip SuccessfulHitAudio;
+    public AudioClip UnsuccessfulHitAudio;
     float timeLeft;
+    AudioController audioController;
 
     //private CursorMovement cursor;
 
@@ -33,6 +36,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioController = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
         if (Loader.currentScene().Equals("GamePlayScene"))
         {
             Debug.Log("bounty num = " + PlayerData.CorrectBountyTargetNumber);
@@ -141,10 +145,12 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Was successful");
             PlayerData.BountySuccess += 1;
+            audioController.Play(SuccessfulHitAudio);
             Loader.Load(Loader.Scene.ContinueScene);
         } else // WE GETTING A GAME OVER YOU FUCKING JOBBER
         {
             Debug.Log("Was not");
+            audioController.Play(UnsuccessfulHitAudio);
             Loader.Load(Loader.Scene.GameOverScene);
         }
 
