@@ -111,7 +111,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Loader.currentScene().Equals("GameOverScene") || Loader.currentScene().Equals("ContinueScene"))
+        if (Loader.currentScene().Equals("GameOverScene"))
+        {
+            PlayerData.BountySuccess = 0; // nuke their score
+        }
+
+        if (Loader.currentScene().Equals("ContinueScene"))
         {
             if (timeLeft > 0)
             {
@@ -151,7 +156,6 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Was not");
             audioController.Play(UnsuccessfulHitAudio);
-            PlayerData.BountySuccess = 0; // nuke their score
             Loader.Load(Loader.Scene.GameOverScene);
         }
 
