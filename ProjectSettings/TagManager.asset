@@ -5,6 +5,15 @@ TagManager:
   serializedVersion: 2
   tags:
   - AudioController
+  - Char01
+  - Char02
+  - Char03
+  - Char04
+  - Char05
+  - Char06
+  - Char07
+  - Char08
+  - Char09
   layers:
   - Default
   - TransparentFX
