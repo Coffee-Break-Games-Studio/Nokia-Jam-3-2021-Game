@@ -9,7 +9,6 @@ public class GameManager : MonoBehaviour
     private List<int> list = new List<int>();
     private int hits = 0;
     private bool success = false;
-    private int counter = 0;
     private string bountyName = "";
 
     public GameObject character01;
@@ -96,6 +95,7 @@ public class GameManager : MonoBehaviour
         }
 
         bountyName = bounty();
+        Debug.Log("GM bounty is = " + bountyName);
     }
 
     // Update is called once per frame
@@ -110,7 +110,9 @@ public class GameManager : MonoBehaviour
         bool status = false;
 
         if (ok.tag.Equals(bountyName)) {
+            Debug.Log("GM says we got it!");
             status = true;
+            PlayerScore.bountyKills += 1;
         }
 
         return status;
