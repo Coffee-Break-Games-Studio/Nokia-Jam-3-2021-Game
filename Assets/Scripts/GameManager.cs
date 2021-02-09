@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
             } else
             {
 
-                if (PlayerData.BountySuccess > 5)
+                if (PlayerData.BountySuccess >= 5)
                 {
                     // WANRING due to loader being async,means this Update method
                     // is called many times before the scene actually changes!!
