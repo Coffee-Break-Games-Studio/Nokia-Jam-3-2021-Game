@@ -10,12 +10,9 @@ public class IntroCounterDisplay : MonoBehaviour
     public GameObject InitialPositionObject;
     int score;
     GameManager gameManager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
-        score = gameManager.GetPlayerScore(); 
 
+    void ShowCounterSprites()
+    {
         if (score > 5) score = 5; // limit of 5 (visual limitation)
         for (int i = 0; i < score; i++) {
             GameObject point = new GameObject("Point" + i);
@@ -31,9 +28,20 @@ public class IntroCounterDisplay : MonoBehaviour
         }
     }
 
+    // Start is called before the first frame update
+    void Start()
+    {
+        gameManager = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameManager>();
+        score = gameManager.GetPlayerScore(); 
+        ShowCounterSprites();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+      if (score != gameManager.GetPlayerScore()) {
+        score = gameManager.GetPlayerScore(); 
+        ShowCounterSprites();
+      }
     }
 }
