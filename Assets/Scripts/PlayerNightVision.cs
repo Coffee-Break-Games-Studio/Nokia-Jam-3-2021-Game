@@ -12,7 +12,6 @@ public class PlayerNightVision : MonoBehaviour
     public AudioClip ToggleOffAudio;
     AudioController audioController;
 
-    bool onCoolDown = false;
     float lastUseTime = 0;
 
     void toggleNightVision()
@@ -32,11 +31,10 @@ public class PlayerNightVision : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("NightVision")) {
-          if (onCoolDown && (Time.time - lastUseTime) < ToggleCooldownSeconds) {
+        if (Input.GetButtonDown("NightVision")) {
+          if (Time.time - lastUseTime < ToggleCooldownSeconds) {
             return;
           }
-          onCoolDown = true;
           lastUseTime = Time.time;
           toggleNightVision();
         }

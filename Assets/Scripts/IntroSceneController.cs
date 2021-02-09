@@ -94,7 +94,7 @@ public class IntroSceneController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Action") && canContinue) {
+        if (Input.GetButtonDown("Action") && canContinue) {
             canContinue = false; // prevent multiple fires
             Debug.Log("Transition");
             audioController.Play(ButtonPressAudio);
