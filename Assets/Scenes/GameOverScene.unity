@@ -391,7 +391,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1464094532}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameOverController, Assembly-CSharp
         m_MethodName: OnQuitPress
         m_Mode: 1
@@ -568,10 +568,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1464094531}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ce3dcafbcb81524d9a70a6febd989a7, type: 3}
+  m_Script: {fileID: 11500000, guid: 33d54ddadfebc974f87839d87323cc3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ButtonPressAudio: {fileID: 0}
 --- !u!4 &1464094533
 Transform:
   m_ObjectHideFlags: 0
@@ -807,7 +806,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1464094532}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameOverController, Assembly-CSharp
         m_MethodName: OnContinuePress
         m_Mode: 1
