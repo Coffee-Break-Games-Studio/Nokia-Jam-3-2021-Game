@@ -3,6 +3,7 @@
 ## Links
 ### Playable right now at [JazyServer.com](https://vps.jazyserver.com/webgames/OneShot/)!
 
+[Nokia JAM Submission Page](https://itch.io/jam/nokiajam3/rate/913424)
 
 [Trello Board](https://trello.com/b/aFWUIBdZ/nokia-3310-jam-3)
 
