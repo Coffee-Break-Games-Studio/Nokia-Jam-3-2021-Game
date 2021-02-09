@@ -1,6 +1,9 @@
 # Nokia Jam 3 Game Outline
 ### By Coffee Break Studios and friend
 ## Links
+### Playable right now at [JazyServer.com](https://vps.jazyserver.com/webgames/OneShot/)!
+
+
 [Trello Board](https://trello.com/b/aFWUIBdZ/nokia-3310-jam-3)
 
 [Nokia 3310 Jam 3 Website](https://itch.io/jam/nokiajam3)
