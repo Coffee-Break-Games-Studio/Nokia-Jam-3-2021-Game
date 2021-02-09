@@ -12,6 +12,7 @@ public class VictorySceneController : MonoBehaviour
     {
         audioController = GameObject.FindGameObjectWithTag("AudioController").GetComponent<AudioController>();
         audioController.Play(EndSong);
+        PlayerData.BountySuccess = 0; // nuke their score
     }
 
     // Update is called once per frame

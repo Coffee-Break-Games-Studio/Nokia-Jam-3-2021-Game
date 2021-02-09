@@ -126,7 +126,8 @@ public class GameManager : MonoBehaviour
 
                 if (PlayerData.BountySuccess == 5)
                 {
-                    PlayerData.BountySuccess = 0; // nuke their score
+                    // WANRING due to loader being async,means this Update method
+                    // is called many times before the scene actually changes!!
                     Loader.Load(Loader.Scene.VictolyScene);
                 } else
                 {
