@@ -18,7 +18,7 @@ public class IntroSceneController : MonoBehaviour
     bool canContinue = false;
     GameManager gameManager;
     AudioController audioController;
-    private static bool IntroSceneVisisted = false;
+    public static bool IntroSceneVisisted = false;
 
     public void Awake()
     {
